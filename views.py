@@ -35,12 +35,3 @@ def getInfo():
                 return json.dumps(response)
         else:
             return "Not logged in"
-
-@app.route("/logout", methods=['GET'])
-def logoutAlumno():
-        if session.get('AUTH') != None and session['AUTH'] == 'Logged':
-            session['AUTH'] = None
-            session['USER'] = None
-            return "Logout Successful"
-        else:
-            return "Logout Failed"
